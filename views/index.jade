@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  
+  div(id="products")
+    h1(class="ui-widget-header well") Tasks
+    div(id="list")
+      for data in AllList  
+        h2.well=data.title
+        div
+          ul
+            li=data.item
+            li=data.itemB
+            li=data.itemC
+            //- li Fight Club
+            //- li Punch Bowl Social
+        //- h2.well Wealth
+        //- div
+        //-   ul
+        //-     li Short the Market
+        //-     li Short Online Betting
+        //- h2.well Soul
+        //- div
+        //-   ul
+        //-     li Listen to Bob Marley
+        //-     li Stikine
+  div.well(id="toDo") 
+      h1(class="ui-widget-header") To Do List
+      div(class="ui-widget-content")
+        ol
+          li(class="placeholder") Add Content
+
+  button(type="link" class='btn btn-info')
+    a(href='/new') New

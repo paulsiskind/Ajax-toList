@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+  h1.well Create Content
+
+
+  form(action='/', method='post')
+    .form-group
+      label Title
+      input.form-control(type="text" name="title" id="title")
+      br
+
+    .form-group
+      label Tasks
+      br
+      textarea.for-control(name="item" class="well")
+      br
+    .form-group
+      label Tasks
+      br
+      textarea.for-control(name="itemB" class="well")
+      br
+    .form-group
+      label Tasks
+      br
+      textarea.for-control(name="itemC" class="well")
+      br
+    Button(type="submit" class="btn btn-lg btn-success") Submit

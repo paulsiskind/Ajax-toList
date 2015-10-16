@@ -21,4 +21,10 @@ router.post('/', function(req, res, next){
                itemC: req.body.itemC});
   res.redirect('/');
 });
+
+router.post('/:id/delete', function(req, res, next){
+  List.remove({_id: req.params.id}, function(err, data){
+    res.redirect('/')
+  })
+})
 module.exports = router;

@@ -8,10 +8,12 @@ block content
       for data in AllList  
         h2.well=data.title
         div
-          ul
+          ul.well
             li=data.item
             li=data.itemB
             li=data.itemC
+            form(action='/'+data._id+ '/delete' method='post')
+              Button(type="submit" value="delete" class="btn btn-xs btn-danger") Delete
             //- li Fight Club
             //- li Punch Bowl Social
         //- h2.well Wealth
@@ -27,8 +29,9 @@ block content
   div.well(id="toDo") 
       h1(class="ui-widget-header") To Do List
       div(class="ui-widget-content")
-        ol
-          li(class="placeholder") Add Content
-
-  button(type="link" class='btn btn-info')
+       form(action='/', method='post') 
+          ol(name='title' value="To Do List")
+            li(class="placeholder" name="item") Add Content
+          Button(type="submit" class="btn btn-lg btn-success") Submit
+  button(type="link" class='btn btn-lg btn-info')
     a(href='/new') New
